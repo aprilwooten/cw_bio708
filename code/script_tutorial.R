@@ -1,3 +1,7 @@
+
+# example code ------------------------------------------------------------
+
+
 x <- c(1, 2)
 x
 
@@ -12,3 +16,33 @@ mean(x)
 
 ## estimate SD
 sd(x)
+
+## quick coding
+z <- c( 1, 2, 3)
+
+
+# exercise ----------------------------------------------------------------
+
+# create a vector with  length 10 and assign it to z
+
+z <- 1:10
+z <- seq (1, 10, length = 10)
+z <- letters [1:10]
+
+#create a numeric matrix with 2 rows x 2 columns and assign to m
+
+m <- matrix(1:4, nrow = 2, ncol = 2)
+m <- cbind(c(1,2), c(3,4))
+m <- rbind (c(1,2), c(3,4))
+
+#data frame 
+
+df0 <- data.frame(name = c("Smith", "John", "Kate", "Akira"), 
+                  height = c(154, 170, 156, 175))
+
+
+
+
+
+
+
