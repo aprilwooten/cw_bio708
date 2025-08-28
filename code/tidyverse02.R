@@ -76,4 +76,10 @@ left_join(x = df_2minus_B,
           by = "Species")
 
 
+# Additional Resource -----------------------------------------------------
+
+#library(swirl)
+#install_course_github("sysilviakim", "swirl-tidy")
+
+
 
