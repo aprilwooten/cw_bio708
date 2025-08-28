@@ -28,6 +28,24 @@ df_eps <- iris_sub %>%
     mutate(eps = abs(Sepal.Length - mean_sl))
 
 
+# Reshape -----------------------------------------------------------------
+
+##reshape to wide format 
+iris_w <- iris_sub %>% 
+  mutate(id = rep(1:3, 3)) %>% # add an ID column
+  select(id, Sepal.Length, Species) %>%
+  pivot_wider(id_cols = "id", # unique row ID based on
+              values_from = "Sepal.Length", # values in each cell from
+              names_from = "Species") # new column names from
+
+## reshape to long format
+iris_l <- iris_w %>%
+    pivot_longer(cols = c("setosa",
+                          "versicolor",
+                          "virginica"),
+                 names_to = "Species", 
+                 values_to = "Sepal.Length")
+
 
 
 
