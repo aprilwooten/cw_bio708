@@ -47,3 +47,101 @@ df_mean <- iris_sub %>%
   summarize (mean_pw = mean(Petal.Width))
 
 
+# ggplot ------------------------------------------------------------------
+
+# without pipe
+## basic syntax 
+g_example <- ggplot(data = iris,
+       mapping = aes(x = Sepal.Length,
+                     y = Sepal.Width)) + 
+  geom_point()
+
+# with pipe
+iris %>% 
+  ggplot(mapping = aes(x = Sepal.Length,
+                       y = Sepal.Width)) +
+  geom_point()
+
+# color
+g_col <- iris %>%
+  ggplot(mapping = aes(x = Sepal.Length,
+                       y = Sepal.Width,
+                       color = Species)) +
+    geom_point()
+
+#pitfall, when you color points or anything
+iris %>%
+  ggplot (mapping = aes (x = Sepal.Lenght,
+                         y = Sepal.Width),
+          color = Species) +
+  geo_plot()
+
+iris%>%
+  ggplot(mapping = aes (x = Sepal.Length,
+                        y = Sepal.Width)) + 
+  geom_point(color = "salmon")
+
+# Line Plot
+## sample data
+df0 <- tibble(x = rep(1:50, 3),
+              y = x * 2)
+
+## basic plot
+df0 %>% 
+  ggplot(aes(x = x,
+             y = y)) +
+  geom_line()
+
+df0 %>%
+  ggplot(aes(x = x,
+             y = y)) + 
+  geom_line()
+
+# histogram
+iris %>% 
+  ggplot(aes(x = Sepal.Length)) +
+  geom_histogram()
+
+#histogram colored by Species
+iris %>%
+  ggplot(aes(x = Sepal.Length,
+             color = Species)) +
+  geom_histogram 
+
+#histogram filled by Species
+iris %>%
+  ggplot(aes(x = Sepal.Length,
+             fill = Species)) +
+  geom_histogram()
+
+#boxplot
+iris %>%
+  ggplot(aes(y= Sepal.Length,
+             x =  Species)) +
+  geom_boxplot()
+
+#boxplot filled by Species
+iris%>%
+  ggplot(aes(y = Sepal.Length,
+             x = Species,
+             fill = Species)) +
+  geom_boxplot()
+
+# use multiple layers
+#example 1
+iris %>%
+  ggplot(aes(y = Sepal.Length,
+             x = Species,
+             fill = Species)) +
+  geom_boxplot() +
+  geom_point()
+
+#use multiple layers
+#example 2
+iris %>%
+  ggplot(aes(y = Sepal.Length,
+             x = Species,
+             fill = Species)) +
+  geom_boxplot() +
+  geom_point() +
+  geom_jitter(alpha = 0.5)
