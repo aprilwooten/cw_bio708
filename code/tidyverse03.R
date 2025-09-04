@@ -35,8 +35,8 @@ df_arrange <- arrange(iris_sub, Petal.Width)
   
 df_master <- iris_sub %>%
             filter(Sepal.Length > 5) %>%
-            select(c(Sepal.Length, Petal.Width) %>%
-            arrange(Petal.Width))
+            select(c(Sepal.Length, Petal.Width)) %>%
+            arrange(Petal.Width)
 
 # extra
 # calculate mean Petal.Width for each species separately
@@ -71,10 +71,10 @@ g_col <- iris %>%
 
 #pitfall, when you color points or anything
 iris %>%
-  ggplot (mapping = aes (x = Sepal.Lenght,
+  ggplot (mapping = aes (x = Sepal.Length,
                          y = Sepal.Width),
           color = Species) +
-  geo_plot()
+  geom_point()
 
 iris%>%
   ggplot(mapping = aes (x = Sepal.Length,
@@ -106,7 +106,7 @@ iris %>%
 iris %>%
   ggplot(aes(x = Sepal.Length,
              color = Species)) +
-  geom_histogram 
+  geom_histogram()
 
 #histogram filled by Species
 iris %>%
