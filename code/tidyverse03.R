@@ -105,7 +105,8 @@ iris %>%
 #histogram colored by Species
 iris %>%
   ggplot(aes(x = Sepal.Length,
-             color = Species)) +
+             color = Species))
++
   geom_histogram()
 
 #histogram filled by Species
