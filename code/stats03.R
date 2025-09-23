@@ -4,7 +4,7 @@
 library(tidyverse)
 
 # load csv data on R
-df_h0 <- read_csv("data_raw/data_plant_height.csv")
+df_h0 <- read_csv(here::here("data_raw/data_plant_height.csv"))
 
 #get a sense of the data 
 df_h0 %>% 
@@ -80,7 +80,7 @@ df_h0 %>%
 # poisson distribution -----------------------------------------------------
 
 ##data for plant counts
-df_count <- read_csv("data_raw/data_garden_count.csv")
+df_count <- read_csv(here::here("data_raw/data_garden_count.csv"))
 print(df_count)
 
 df_count %>% 
