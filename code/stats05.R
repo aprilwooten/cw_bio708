@@ -7,8 +7,6 @@ pacman::p_load(tidyverse,
 
 # read data ---------------------------------------------------------------
 
-read_csv(here("data_raw/data"))
-
 df_anova <- read_csv(here("data_raw/data_fish_length_anova.csv"))
 
 ##get unique values
